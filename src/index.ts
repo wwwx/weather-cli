@@ -12,4 +12,4 @@ if (process.argv.slice(2).length === 0) {
   process.exit();
 }
 
-// console.log(options.city);
+console.log(options.city);
