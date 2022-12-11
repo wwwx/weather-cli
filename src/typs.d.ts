@@ -1,0 +1,3 @@
+interface ICast {
+  week: string;
+}
