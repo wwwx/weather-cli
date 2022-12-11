@@ -1,5 +1,6 @@
 #! /usr/bin/env node
-// const { program } = require("commander");
+
+import colors from "colors";
 import { program } from "commander";
 
 program.option("-c, --city [name]", "Add city name");
@@ -8,7 +9,7 @@ program.parse();
 const options = program.opts();
 
 if (process.argv.slice(2).length === 0) {
-  program.outputHelp();
+  program.outputHelp(colors.red);
   process.exit();
 }
 
