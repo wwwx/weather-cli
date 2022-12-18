@@ -3,7 +3,13 @@
 import axios from "axios";
 import colors from "colors";
 import { program } from "commander";
-// import chineseWeek from "./chineseWeek";
+import chineseWeek from "./chineseWeek";
+
+interface ICast {
+  week: string;
+  daytemp: string;
+  nighttemp: string;
+}
 
 program.option("-c, --city [name]", "Add city name");
 program.option("-a, --all", "Show forecast weather");
@@ -37,9 +43,11 @@ axios
         } else {
           data = response.data.lives;
         }
-        // data.forEach((item) => {
-        //   item.week = chineseWeek(item.week);
-        // });
+        data.forEach((item: ICast) => {
+          item.week = chineseWeek(~~item.week);
+          item.daytemp = item.daytemp + "°C";
+          item.nighttemp = item.nighttemp + "°C";
+        });
         console.table(data);
       } else {
         console.log(colors.red(JSON.stringify(response.data)));
