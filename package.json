@@ -1,7 +1,7 @@
 {
-  "name": "weather",
+  "name": "@worldsky/weather",
   "version": "1.0.0",
-  "description": "",
+  "description": "weather forcast ",
   "main": "build/index.js",
   "bin": {
     "weather": "./build/index.js"
@@ -26,5 +26,18 @@
     "husky": "^8.0.2",
     "ts-node": "10.9.1",
     "typescript": "^3.9.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wwwx/weather-cli.git"
+  },
+  "keywords": [
+    "weather",
+    "forcast"
+  ],
+  "bugs": {
+    "url": "https://github.com/wwwx/weather-cli/issues"
+  },
+  "homepage": "https://github.com/wwwx/weather-cli#readme"
 }
