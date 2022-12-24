@@ -36,7 +36,17 @@ axios
     if (response.status === 200) {
       // console.log(JSON.stringify(response.data));
       if (response.data.status === STATUS_CODE_SUCCESS) {
-        console.log(colors.green(response.data.info));
+        console.log("status: ", colors.green(response.data.info));
+
+        if (response.data.forecasts.length === 0) {
+          console.log(
+            colors.red(
+              "Sorry, the city you entered is not supportted, pleasee enter any city name in china"
+            )
+          );
+          return;
+        }
+
         let data = [];
         if (options.all) {
           data = response.data.forecasts[0].casts;
