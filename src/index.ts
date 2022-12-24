@@ -44,7 +44,7 @@ axios
           data = response.data.lives;
         }
         data.forEach((item: ICast) => {
-          item.week = chineseWeek(~~item.week);
+          item.week = chineseWeek(~~item.week - 1);
           item.daytemp = item.daytemp + "°C";
           item.nighttemp = item.nighttemp + "°C";
         });
