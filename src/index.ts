@@ -11,6 +11,14 @@ interface ICast {
   nighttemp: string;
 }
 
+// eslint-disable-next-line
+const pkg = require("../package.json");
+
+program
+  .name("weather")
+  .description("Get weather forecast data for china")
+  .version(pkg.version);
+
 program.option("-c, --city [name]", "Add city name");
 program.option("-a, --all", "Show forecast weather");
 program.parse();
